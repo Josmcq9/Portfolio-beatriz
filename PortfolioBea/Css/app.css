@@ -1,0 +1,427 @@
+/* variables */
+:root {
+    --colorMenu: #D290BC;
+    --colorMenu2:#C470A8;
+    --ColorTitulos: #B9B0C3;
+    --secundario: #00DA55;
+    --gris: #3B3B3B;
+    --blanco: #FFFFFF;
+    --negro: #1F1E1E;
+    --grisClaro: #e1e1e1;
+    --fondo: #FEFEFE;
+
+    --separacion: 5rem;
+
+    --fuentePrincipal: 'Roboto', sans-serif;
+    --fuenteTitulos: 'Great Vibes', cursive;
+
+    --tran-03: all 0.2s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.4s ease;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+body{
+    background-color: var(--fondo);
+    font-family: var(--fuentePrincipal);
+}
+
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+    color: var(--negro);
+    
+}
+h1 , h3{
+margin-top: 0;
+margin-bottom: 0;
+}
+
+
+.text-center{
+    text-align: center;
+}
+.barra {
+    font-family: 'Lato', sans-serif;
+    /**Alto y ancho de donde se va a activar cuando pase el mouse**/
+    width:10%;
+    height:9%;
+    /*Para que este siempre en la misma parte de la pantalla aunque se haga scroll*/
+    position:fixed;
+    /*Tiempo en el que va a transitar la animacion*/
+    transition: .4s all ;
+    /*este arriba de todo en la pantalla*/
+    z-index: 1;  
+}
+
+.barra ul{
+    /*solucionar espacios no deseados*/
+    padding:0px;
+    text-align: center;
+        
+}
+.barra  li{
+    /*Velocidad de transicion del contenido*/
+    transition:all .3s;
+    list-style: none; 
+}
+
+.barra a{
+    text-decoration: none;
+    
+    font-weight: normal;
+    
+    /*La letra crece con el menu de esta manera no se va a ver como se ajusta al margen mientras crece*/
+    transition: .3s all ;
+    /*Se ocultan los elementos*/
+    font-size: 0px;
+    padding:0px;
+}
+.barra  .logo{
+    text-align: center;
+}
+
+.barra  .logo img{
+    width: 20rem;
+    /*Se oculta el h2*/
+    border-radius: 15rem;
+    display: none;
+}
+
+.barra img{
+    padding-top: 30px;
+    padding-left: 10px;
+}
+
+.barra:hover{
+    /*Tamaño cuando el cursor señale la barra*/
+    width: 70%;
+    height: 100vh;
+    
+    /*Color*/
+    background: var(--colorMenu);
+}
+.barra:hover .logo img{
+    /*posicion dentro de barra del h2*/
+    padding:15px;
+    display:inline;
+}
+.barra:hover a{ 
+    font-size:20px ;
+    color:white;
+    /*Se usa el display block para que el enlace respete el margin*/
+    display: block;
+    padding:20px;
+}
+.barra:hover .icono{
+    /*Desaparecer la imagen*/
+    display: none;
+}
+
+
+.barra:hover li{
+    /*Espacios entre las lineas y el contenido*/
+    
+    width:100%;
+        
+}
+
+.barra:hover a:hover{ 
+    font-size: 25px;
+    padding: 30px 0px; 
+    background: var(--colorMenu2);  
+}
+
+@media (min-width: 768px){
+    .barra:hover{
+    width: 45%;
+    }
+}
+
+.inicio img{
+    padding-top: 10rem;
+    width: 20rem;
+    border-radius: 150px;
+}
+
+.titulo{
+    font-family: var(--fuenteTitulos);
+    font-size: 4.5rem;
+    color: #B9B0C3;
+    font-weight: 400;
+}
+
+@media (min-width: 700px) {
+    .titulo{
+        font-size: 9rem;
+    }
+}
+
+.subtitulo{
+    font-family: var(--fuentePrincipal);
+    font-size: 2rem;
+    font-weight: 400;
+}
+@media (min-width: 700px ) {
+    .subtitulo{
+        font-size: 3.5rem;
+    }
+}
+
+.contenedor-botton{
+    margin-top: 4rem;
+}
+
+.btn{
+    background-color: var(--colorMenu);
+    padding: 2rem;
+    border-radius: 5rem;
+    font-size: 1.6rem;
+    opacity: 0.5;
+    transition: opacity 0.5s;
+}
+
+.btn:hover{
+    opacity: 1;
+}
+
+.separador{
+    margin-top: 5rem;
+    border: var(--colorMenu) solid 1px;
+    opacity: 0.5;
+}
+
+.Quiensoy{
+    margin-top: 5rem;   
+} 
+
+.contenido_soy{
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+}
+
+@media (min-width: 700px) {
+    .contenido_soy{
+        margin-top: 4rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+    } 
+}
+.img-soy img{
+ width: 30rem;
+}
+
+.text-soy{
+    padding: 2rem;
+    text-align: left;
+    font-size: 1.8rem;
+}
+
+/* filosofia */
+.contenido_filosofia{
+    margin-top: 4rem
+}
+
+.img-filosofia{
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .img-filosofia{
+        display: block;
+    }
+    .contenido_filosofia{
+   
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+    } 
+    .contenido_filosofia2{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+    } 
+}
+
+.text-filosofia{
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+.text-filosofia p{
+    justify-items: center;
+}
+
+.img-filosofia img{
+    width: 40rem;
+   }
+/* formacion */
+.naranja{
+    background-color: #F6AE99;
+}
+.amarillo{
+   background-color: #F4EBAB;
+}
+.verde{
+    background-color: #B9DBBA;
+}
+
+
+
+.contenido-formacion{
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    display: flex;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 150px;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+@media (min-width: 700px) {
+    .contenedor-formacion{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media (min-width: 1000px) {
+    .contenedor-formacion{
+
+        grid-template-columns: repeat(3, 0.5fr);
+    }
+}
+
+.text-formacion h3{
+    font-size: 1.9rem;
+}
+.text-formacion p{
+    font-size: 1.8rem;
+}
+.contenedor-curso{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+.contenido-cursos{
+    width: 20rem;
+    height: 25rem;
+    padding: 2rem;
+    border-radius: 5rem;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.contenido-cursos p{
+  font-size: 1.8rem;
+}
+
+
+@media (min-width: 700px) {
+    .contenedor-curso{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-content: center;
+        
+    }
+}
+
+
+@media (min-width: 1000px) {
+    .contenedor-curso{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        
+    }
+}
+
+.contenedor-actividades{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.actividad{
+    max-width: 15rem;
+}
+.actividad h3{
+    padding: 1rem;
+    font-size: 1.8rem;
+}
+
+@media (min-width: 700px) {
+    .actividad{
+        max-width: 20rem;
+        margin-bottom: 4rem;
+    }
+    
+    .contenedor-actividades{
+        grid-template-columns: repeat(3, 1fr);  
+    } 
+}
+
+@media (min-width: 1000px ) {
+    .actividad{
+        min-width: 15rem;
+        max-width: 25rem;
+        transition: max-width 0.5s;
+    }
+    .actividad:hover{
+        max-width: 28rem;
+    }
+    
+    .contenedor-actividades{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;  
+    } 
+}
+
+footer{
+    background-color: var(--colorMenu);
+    height: 10rem;
+}
+.contenedor-footer ul{
+    list-style: none;
+    height: 10rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.contenedor-footer ul i{
+    height: 2rem;
+    }
+
+.contenedor-footer ul a{
+font-size: 2rem;
+color: var(--blanco);}
+
+
+
+
+
+
+
+
+   
+
